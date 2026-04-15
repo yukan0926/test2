@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>班級核心價值互動工具</title>
+    <title>最溫暖的三甲英語課</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @keyframes fadeIn {
@@ -23,229 +23,330 @@
 </head>
 <body class="min-h-screen bg-slate-50 text-slate-900 font-sans p-4 md:p-8">
 
-    <div class="max-w-4xl mx-auto">
+    <div class="max-w-5xl mx-auto">
         <!-- Header -->
         <header class="text-center mb-10">
             <h1 class="text-3xl md:text-4xl font-bold text-indigo-700 mb-2 flex items-center justify-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-700"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
-                班級核心價值：我們的約定
+                最溫暖的三甲英語課
             </h1>
-            <p class="text-slate-500">透過認識與互動，讓我們建立一個更溫暖、更有溫度的班級環境。</p>
+            <p class="text-slate-500">在三甲的英語課，我們一起學習、一起成長，落實這些美好的核心價值。</p>
         </header>
 
         <!-- Navigation Tabs -->
-        <div class="flex justify-center gap-2 mb-8 bg-white p-1 rounded-full shadow-sm border border-slate-200">
-            <button id="tab-home" onclick="switchView('home')" class="tab-btn px-6 py-2 rounded-full transition-all bg-indigo-600 text-white shadow-md">
+        <div class="flex flex-wrap justify-center gap-2 mb-8 bg-white p-1 rounded-2xl md:rounded-full shadow-sm border border-slate-200 max-w-3xl mx-auto">
+            <button id="tab-home" onclick="switchView('home')" class="tab-btn px-4 py-2 rounded-full transition-all bg-indigo-600 text-white shadow-md flex-1 min-w-[100px] text-sm md:text-base">
                 認識價值
             </button>
-            <button id="tab-vote" onclick="switchView('vote')" class="tab-btn px-6 py-2 rounded-full transition-all hover:bg-slate-100">
-                心目中首選
+            <button id="tab-practice" onclick="switchView('practice')" class="tab-btn px-4 py-2 rounded-full transition-all hover:bg-slate-100 flex-1 min-w-[100px] text-sm md:text-base">
+                實踐指南
             </button>
-            <button id="tab-quiz" onclick="switchView('quiz')" class="tab-btn px-6 py-2 rounded-full transition-all hover:bg-slate-100">
-                實踐挑戰
+            <button id="tab-vote" onclick="switchView('vote')" class="tab-btn px-4 py-2 rounded-full transition-all hover:bg-slate-100 flex-1 min-w-[100px] text-sm md:text-base">
+                投票首選
+            </button>
+            <button id="tab-results" onclick="switchView('results')" class="tab-btn px-4 py-2 rounded-full transition-all hover:bg-slate-100 flex-1 min-w-[100px] text-sm md:text-base">
+                投票結果
             </button>
         </div>
 
         <!-- Main Content Area -->
         <main class="bg-white rounded-2xl shadow-xl p-6 md:p-10 border border-slate-100 min-h-[400px]">
             
-            <!-- View: Home -->
+            <!-- View: Home (認識價值) -->
             <div id="view-home" class="view-section active animate-fadeIn">
                 <h2 class="text-2xl font-bold mb-6 flex items-center gap-2 text-slate-800">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-yellow-500"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.9 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
-                    什麼是我們的核心價值？
+                    三甲的核心價值
                 </h2>
-                <div id="core-values-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div id="core-values-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     <!-- Core values will be injected here via JS -->
                 </div>
-                <div class="mt-10 text-center">
-                    <button onclick="switchView('vote')" class="inline-flex items-center gap-2 bg-indigo-600 text-white px-8 py-3 rounded-xl font-semibold hover:bg-indigo-700 transition-colors">
-                        開始互動投票 
+                <div class="mt-10 text-center flex flex-wrap justify-center gap-4">
+                    <button onclick="switchView('practice')" class="inline-flex items-center gap-2 bg-teal-600 text-white px-8 py-3 rounded-xl font-semibold hover:bg-teal-700 transition-colors">
+                        查看實踐指南 
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </button>
+                    <button onclick="switchView('vote')" class="inline-flex items-center gap-2 bg-indigo-600 text-white px-8 py-3 rounded-xl font-semibold hover:bg-indigo-700 transition-colors">
+                        進入票選區 
                     </button>
                 </div>
             </div>
 
-            <!-- View: Vote -->
+            <!-- View: Vote (心目中首選) -->
             <div id="view-vote" class="view-section animate-fadeIn">
                 <h2 class="text-2xl font-bold mb-2 flex items-center gap-2 text-slate-800">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-500"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
-                    心目中最希望班級做到的價值
+                    我們最想達成的目標
                 </h2>
-                <p class="text-slate-500 mb-8">每人投下一票，看看班級共同最重視的是什麼？</p>
+                <p class="text-slate-500 mb-4">每人最多可投 3 票，選出我們最想在英語課達成的價值是什麼？</p>
+                <div id="vote-selection-status" class="text-center mb-6 font-bold text-indigo-600 text-lg hidden">請選擇 3 項 (目前已選: 0/3)</div>
                 
                 <!-- Vote Options -->
-                <div id="vote-options" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div id="vote-options" class="grid grid-cols-2 md:grid-cols-3 gap-4">
                     <!-- Vote buttons will be injected here -->
                 </div>
 
-                <!-- Vote Results (Hidden initially) -->
-                <div id="vote-results" class="space-y-6 hidden">
-                    <div class="bg-green-50 text-green-700 p-4 rounded-lg flex items-center gap-2 mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-                        投票成功！看看大家的選擇：
+                <!-- Student Success Screen (Hidden initially) -->
+                <div id="vote-success" class="space-y-6 hidden max-w-2xl mx-auto text-center py-10">
+                    <div class="inline-block p-5 bg-green-100 text-green-600 rounded-full mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
                     </div>
-                    <div id="vote-bars-container">
-                        <!-- Progress bars will be injected here -->
+                    <h3 class="text-3xl font-bold text-slate-800">投票成功！</h3>
+                    <p class="text-slate-600 text-lg">你的寶貴意見已經記錄下來囉。謝謝你的參與！</p>
+                    <div class="pt-8 flex flex-wrap justify-center gap-4">
+                        <button onclick="switchView('results')" class="bg-teal-600 text-white px-8 py-3 rounded-xl font-semibold hover:bg-teal-700 transition-colors shadow-md">
+                            瀏覽投票結果
+                        </button>
                     </div>
-                    <div class="pt-6 text-center">
-                        <button onclick="switchView('quiz')" class="bg-indigo-600 text-white px-8 py-3 rounded-xl font-semibold hover:bg-indigo-700 transition-colors">
-                            進入挑戰：我會實踐它！
+                </div>
+
+                <!-- Already Voted Screen (Hidden initially) -->
+                <div id="vote-already" class="space-y-6 hidden max-w-2xl mx-auto text-center py-10">
+                    <div class="inline-block p-5 bg-indigo-100 text-indigo-600 rounded-full mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                    </div>
+                    <h3 class="text-3xl font-bold text-slate-800">你已經投過票囉！</h3>
+                    <p class="text-slate-600 text-lg">每台平板只能投一次票。請前往觀看全班的即時結果。</p>
+                    <div class="pt-8 flex flex-wrap justify-center gap-4">
+                        <button onclick="switchView('results')" class="bg-indigo-600 text-white px-8 py-3 rounded-xl font-semibold hover:bg-indigo-700 transition-colors shadow-md">
+                            前往投票結果
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- View: Quiz -->
-            <div id="view-quiz" class="view-section animate-fadeIn">
-                <div class="flex justify-between items-center mb-6">
-                    <span id="quiz-progress" class="text-sm font-bold text-indigo-600 uppercase tracking-wider">情境挑戰 1 / 3</span>
-                    <span id="quiz-score-display" class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-bold">目前分數: 0</span>
+            <!-- View: Results (投票結果) -->
+            <div id="view-results" class="view-section animate-fadeIn">
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="text-2xl font-bold flex items-center gap-2 text-slate-800">
+                        📊 班級投票結果
+                    </h2>
+                    <span id="results-voter-count" class="bg-indigo-100 text-indigo-800 px-4 py-1 rounded-full font-bold">
+                        總投票人數: 0
+                    </span>
                 </div>
                 
-                <h2 id="quiz-question" class="text-2xl font-bold text-slate-800 mb-8 leading-snug">
-                    <!-- Question text -->
-                </h2>
-
-                <div id="quiz-options" class="space-y-4">
-                    <!-- Quiz options will be injected here -->
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 mb-8">
+                    <div id="results-bars-container" class="space-y-6">
+                        <!-- Progress bars will be injected here -->
+                    </div>
                 </div>
 
-                <div id="quiz-feedback" class="mt-6 p-4 rounded-lg animate-bounce hidden">
-                    <!-- Feedback will be injected here -->
+                <div class="text-center flex justify-center gap-4">
+                    <button onclick="switchView('vote')" class="bg-indigo-600 text-white px-6 py-2 rounded-xl font-semibold hover:bg-indigo-700 transition-colors">
+                        我要投票
+                    </button>
+                    <button onclick="clearAllVotes()" class="bg-slate-200 text-slate-700 px-6 py-2 rounded-xl font-semibold hover:bg-slate-300 transition-colors">
+                        清除所有紀錄
+                    </button>
                 </div>
             </div>
 
-            <!-- View: Results -->
-            <div id="view-results" class="view-section text-center animate-fadeIn py-10">
-                <div class="mb-6 inline-block p-6 bg-yellow-50 rounded-full border-4 border-yellow-200">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-yellow-500"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+            <!-- View: Practice (實踐指南) -->
+            <div id="view-practice" class="view-section animate-fadeIn">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl font-bold mb-2 flex items-center justify-center gap-2 text-slate-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-teal-500"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                        生活與課堂的實踐指南
+                    </h2>
+                    <p class="text-slate-500">不只是口號，讓我們看看具體「怎麼說」與「怎麼做」。</p>
                 </div>
-                <h2 class="text-3xl font-bold mb-4 text-slate-800">挑戰完成！</h2>
-                <p class="text-xl text-slate-600 mb-8">
-                    你的「價值實踐力」得分：<span id="final-score" class="text-indigo-600 font-black text-4xl mx-2">0</span> / <span id="total-scenarios">0</span>
-                </p>
                 
-                <div class="bg-indigo-50 p-6 rounded-2xl mb-8 max-w-md mx-auto">
-                    <p class="italic text-indigo-800 leading-relaxed">
-                        「最偉大的價值不是掛在牆上的口號，而是我們每天如何對待彼此。」
-                    </p>
-                </div>
-
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button onclick="resetAll()" class="bg-slate-200 text-slate-700 px-8 py-3 rounded-xl font-semibold hover:bg-slate-300 transition-colors">
-                        重新開始
-                    </button>
-                    <button onclick="switchView('home')" class="bg-indigo-600 text-white px-8 py-3 rounded-xl font-semibold hover:bg-indigo-700 shadow-lg transition-colors">
-                        回到價值介紹
-                    </button>
+                <div id="practice-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Practice cards will be injected here -->
                 </div>
             </div>
 
         </main>
 
         <!-- Footer -->
-        <footer class="mt-8 text-center text-slate-400 text-sm">
-            <p>© 2024 班級經營數位工具．讓價值落實於生活</p>
+        <footer class="mt-8 flex flex-col sm:flex-row justify-center items-center text-slate-400 text-sm gap-4">
+            <p>© 2024 最溫暖的三甲英語課．讓價值落實於生活</p>
         </footer>
     </div>
 
-    <script>
-        // Data Configuration
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, doc, setDoc, getDocs, onSnapshot, deleteDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Data Configuration - Added Courage & Gratitude, and replaced Quiz with Examples
         const CORE_VALUES = [
             {
                 id: 'respect',
                 title: '尊重',
-                description: '看重他人的感受、權利與獨特性。',
-                iconSvg: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-pink-500"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>',
+                description: '看重他人的感受，專心聆聽不打斷。',
+                iconSvg: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7 text-pink-500"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>',
                 color: 'bg-pink-50',
-                borderColor: 'border-pink-200'
+                borderColor: 'border-pink-200',
+                headerBg: 'bg-pink-100',
+                howToSay: '"Thank you for sharing." / "你的想法很棒，不過我有不同的看法..."',
+                howToDo: '同學發表英文演說時，眼睛看著對方並專心聆聽；別人說話時不隨便插嘴。'
             },
             {
                 id: 'responsibility',
                 title: '負責',
-                description: '認真完成自己的任務，並勇於承擔後果。',
-                iconSvg: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-blue-500"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2-1 4-2 7-2 2.5 0 4.5 1 6.5 1a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>',
+                description: '為自己的學習負責，準備好上課所需。',
+                iconSvg: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7 text-blue-500"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2-1 4-2 7-2 2.5 0 4.5 1 6.5 1a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>',
                 color: 'bg-blue-50',
-                borderColor: 'border-blue-200'
+                borderColor: 'border-blue-200',
+                headerBg: 'bg-blue-100',
+                howToSay: '"I will do my homework." / "這是我該負責的部分，我會準時完成。"',
+                howToDo: '上課鐘響前回到座位；確實帶齊英文課本與習作；主動完成老師交代的任務。'
             },
             {
                 id: 'cooperation',
-                title: '合作',
-                description: '與他人攜手並進，為了共同目標努力。',
-                iconSvg: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-green-500"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+                title: '互助',
+                description: '互相幫助完成共同目標。',
+                iconSvg: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7 text-green-500"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
                 color: 'bg-green-50',
-                borderColor: 'border-green-200'
+                borderColor: 'border-green-200',
+                headerBg: 'bg-green-100',
+                howToSay: '"Let\'s do it together!" / "你需要幫忙嗎？我們一起找答案吧！"',
+                howToDo: '小組討論時積極參與，不把工作都丟給別人；主動協助遇到困難的同學拼讀單字。'
             },
             {
                 id: 'integrity',
                 title: '誠實',
-                description: '說實話、做對的事，贏得他人的信任。',
-                iconSvg: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-yellow-500"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>',
+                description: '誠實面對學習，不懂就問，不欺騙。',
+                iconSvg: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7 text-yellow-500"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>',
                 color: 'bg-yellow-50',
-                borderColor: 'border-yellow-200'
-            }
-        ];
-
-        const SCENARIOS = [
-            {
-                id: 1,
-                value: 'respect',
-                question: '當你在討論中與同學意見不同時，最好的實踐方式是？',
-                options: [
-                    { text: '大聲反駁，直到對方認輸', isCorrect: false, feedback: '這可能會傷害同學的感情。' },
-                    { text: '耐心聽完對方的想法，再平和地表達自己的意見', isCorrect: true, feedback: '很好！這展現了對他人想法的尊重。' },
-                    { text: '不說話，心裡默默討厭對方', isCorrect: false, feedback: '溝通才是解決差異的好方法。' }
-                ]
+                borderColor: 'border-yellow-200',
+                headerBg: 'bg-yellow-100',
+                howToSay: '"I made a mistake, sorry." / "老師，這個文法我聽不懂，可以再講一次嗎？"',
+                howToDo: '考試不作弊；英文習作自己思考撰寫，不抄襲同學的答案；做錯事勇於承認。'
             },
             {
-                id: 2,
-                value: 'responsibility',
-                question: '分組作業時，如果你分配到的任務比較難，你會？',
-                options: [
-                    { text: '假裝忘記做，等其他同學幫忙完成', isCorrect: false, feedback: '這樣會增加組員的負擔喔。' },
-                    { text: '直接放棄，說自己不會做', isCorrect: false, feedback: '嘗試努力或尋求建議也是負責的表現。' },
-                    { text: '儘力嘗試，若遇到困難主動找老師或組長討論', isCorrect: true, feedback: '正確！積極面對困難是負責任的典範。' }
-                ]
+                id: 'courage',
+                title: '勇敢',
+                description: '勇於開口說英文，不怕犯錯。',
+                iconSvg: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7 text-orange-500"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>',
+                color: 'bg-orange-50',
+                borderColor: 'border-orange-200',
+                headerBg: 'bg-orange-100',
+                howToSay: '"Can I try?" / "雖然我不確定發音對不對，但我願意試試看！"',
+                howToDo: '上課遇到提問主動舉手發言；不怕發音不標準，勇敢且大聲地唸出英文句子。'
             },
             {
-                id: 3,
-                value: 'cooperation',
-                question: '大掃除時，你發現自己負責的區域做完了，但旁邊的同學還在忙，你會？',
-                options: [
-                    { text: '主動詢問：「需要我幫忙嗎？」一起完成任務', isCorrect: true, feedback: '太棒了！團結力量大，這就是合作精神。' },
-                    { text: '趕快收拾東西回座位休息', isCorrect: false, feedback: '班級環境需要大家共同維護。' },
-                    { text: '站在旁邊看同學做，順便給他建議', isCorrect: false, feedback: '實際動手幫忙會比口頭建議更有力量。' }
-                ]
+                id: 'gratitude',
+                title: '感恩',
+                description: '對身邊的人事物表達感謝與珍惜。',
+                iconSvg: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7 text-teal-500"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>',
+                color: 'bg-teal-50',
+                borderColor: 'border-teal-200',
+                headerBg: 'bg-teal-100',
+                howToSay: '"Thank you for your help." / "謝謝老師的教導，謝謝同學借我橡皮擦。"',
+                howToDo: '當同學或老師幫助你時，真誠地看著對方道謝；愛惜英語課本與教室的學習設備。'
             }
         ];
 
         // State variables
         let currentView = 'home';
-        let votes = { respect: 0, responsibility: 0, cooperation: 0, integrity: 0 };
+        let votes = {};
+        CORE_VALUES.forEach(val => votes[val.id] = 0);
         let hasVoted = false;
-        let quizIndex = 0;
-        let score = 0;
-        let isQuizAnswering = false;
+        let userSelectedVotes = []; 
+        let totalVoters = 0;
+        let currentUser = null;
+
+        // Firebase Configuration setup
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const COLLECTION_NAME = 'class_values_votes';
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        // Expose functions to window object for HTML onClick handlers
+        window.switchView = switchView;
+        window.toggleVoteSelection = toggleVoteSelection;
+        window.submitVotes = submitVotes;
+        window.clearAllVotes = clearAllVotes;
 
         // Initialization
         document.addEventListener('DOMContentLoaded', () => {
             renderCoreValues();
             renderVoteOptions();
-            document.getElementById('total-scenarios').textContent = SCENARIOS.length;
+            renderPracticeGuide();
+
+            // Setup Firebase Auth & Realtime listener
+            const initAuth = async () => {
+                try {
+                    if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                        await signInWithCustomToken(auth, __initial_auth_token);
+                    } else {
+                        await signInAnonymously(auth);
+                    }
+                } catch (e) {
+                    console.error("Auth error:", e);
+                }
+            };
+
+            initAuth();
+
+            onAuthStateChanged(auth, (user) => {
+                currentUser = user;
+                if (user) {
+                    setupRealtimeListener();
+                }
+            });
         });
+
+        function setupRealtimeListener() {
+            const colRef = collection(db, 'artifacts', appId, 'public', 'data', COLLECTION_NAME);
+            onSnapshot(colRef, (snapshot) => {
+                // Reset local counts
+                CORE_VALUES.forEach(val => votes[val.id] = 0);
+                totalVoters = snapshot.docs.length;
+                let dbHasVoted = false;
+
+                snapshot.forEach(document => {
+                    const data = document.data();
+                    if (document.id === currentUser.uid) {
+                        dbHasVoted = true;
+                    }
+                    if (data.selected && Array.isArray(data.selected)) {
+                        data.selected.forEach(id => {
+                            if (votes[id] !== undefined) votes[id]++;
+                        });
+                    }
+                });
+
+                // Sync local state with Database state
+                if (!dbHasVoted && hasVoted) {
+                    // Teacher cleared DB, reset student's state
+                    hasVoted = false;
+                    userSelectedVotes = [];
+                    resetVoteUI();
+                } else if (dbHasVoted && !hasVoted) {
+                    // Student already voted on this device previously
+                    hasVoted = true;
+                    showAlreadyVotedScreen();
+                }
+
+                if (currentView === 'results') {
+                    renderResults();
+                }
+            }, (error) => {
+                console.error("Firestore error:", error);
+            });
+        }
 
         // View Navigation Logic
         function switchView(viewName) {
             currentView = viewName;
             
+            if (viewName === 'results') {
+                renderResults();
+            }
+
             // Update tabs
             document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.className = "tab-btn px-6 py-2 rounded-full transition-all hover:bg-slate-100";
+                btn.className = "tab-btn px-4 py-2 rounded-full transition-all hover:bg-slate-100 flex-1 min-w-[100px] text-sm md:text-base";
             });
-            const activeTabBtn = document.getElementById(`tab-${viewName === 'results' ? 'quiz' : viewName}`);
+            const activeTabBtn = document.getElementById(`tab-${viewName}`);
             if(activeTabBtn) {
-                activeTabBtn.className = "tab-btn px-6 py-2 rounded-full transition-all bg-indigo-600 text-white shadow-md";
+                activeTabBtn.className = "tab-btn px-4 py-2 rounded-full transition-all bg-indigo-600 text-white shadow-md flex-1 min-w-[100px] text-sm md:text-base";
             }
 
             // Hide all sections and show target
@@ -257,148 +358,190 @@
                 section.style.animation = null; 
             });
             document.getElementById(`view-${viewName}`).classList.add('active');
-
-            // Render view specific content
-            if (viewName === 'quiz') renderQuiz();
-            if (viewName === 'results') document.getElementById('final-score').textContent = score;
         }
 
         // Render Home View
         function renderCoreValues() {
             const container = document.getElementById('core-values-container');
             container.innerHTML = CORE_VALUES.map(val => `
-                <div class="${val.color} border ${val.borderColor} p-6 rounded-xl transition-transform hover:scale-[1.02]">
-                    <div class="flex items-center gap-3 mb-3">
+                <div class="${val.color} border ${val.borderColor} p-6 rounded-xl transition-transform hover:scale-[1.02] flex flex-col items-center text-center">
+                    <div class="mb-3 p-3 bg-white rounded-full shadow-sm">
                         ${val.iconSvg}
-                        <h3 class="text-xl font-bold text-slate-800">${val.title}</h3>
                     </div>
-                    <p class="text-slate-600 leading-relaxed">${val.description}</p>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">${val.title}</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">${val.description}</p>
                 </div>
             `).join('');
         }
 
         // Render Vote View
         function renderVoteOptions() {
+            const statusDiv = document.getElementById('vote-selection-status');
+            statusDiv.classList.remove('hidden');
+            statusDiv.textContent = `請選擇 3 項 (目前已選: ${userSelectedVotes.length}/3)`;
+            
             const container = document.getElementById('vote-options');
-            container.innerHTML = CORE_VALUES.map(val => `
-                <button onclick="handleVote('${val.id}')" class="group flex flex-col items-center p-6 border-2 border-slate-100 rounded-2xl hover:border-indigo-500 hover:bg-indigo-50 transition-all text-center w-full">
-                    <div class="mb-4 p-4 bg-white rounded-full shadow-sm group-hover:scale-110 transition-transform">
+            container.innerHTML = CORE_VALUES.map(val => {
+                const isSelected = userSelectedVotes.includes(val.id);
+                const isMaxReached = userSelectedVotes.length >= 3;
+                const isDisabled = !isSelected && isMaxReached;
+                
+                // 根據選取狀態設定樣式
+                let buttonClasses = "group relative flex flex-col items-center p-5 border-2 rounded-2xl transition-all text-center w-full ";
+                if (isSelected) {
+                    buttonClasses += "border-indigo-500 bg-indigo-50 shadow-md ring-2 ring-indigo-200";
+                } else if (isDisabled) {
+                    buttonClasses += "border-slate-100 bg-slate-50 opacity-50 cursor-not-allowed";
+                } else {
+                    buttonClasses += "border-slate-100 bg-white hover:border-indigo-300 hover:bg-indigo-50";
+                }
+
+                return `
+                <button onclick="toggleVoteSelection('${val.id}')" class="${buttonClasses}" ${isDisabled ? 'disabled' : ''}>
+                    <div class="mb-3 p-3 ${isSelected ? 'bg-indigo-100' : 'bg-white'} rounded-full shadow-sm ${!isDisabled && !isSelected ? 'group-hover:scale-110' : ''} transition-transform flex-shrink-0">
                         ${val.iconSvg}
                     </div>
-                    <span class="text-lg font-bold text-slate-800">${val.title}</span>
+                    <span class="text-base md:text-lg font-bold text-slate-800">${val.title}</span>
+                    <p class="text-xs text-slate-500 mt-2 leading-relaxed px-1">${val.description}</p>
+                    ${isSelected ? '<div class="absolute top-3 right-3 text-indigo-600"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>' : ''}
                 </button>
-            `).join('');
+                `;
+            }).join('') + `
+                <div class="col-span-2 md:col-span-3 text-center mt-6">
+                    <button onclick="submitVotes()" class="bg-indigo-600 text-white px-10 py-3 rounded-xl font-bold shadow-lg transition-all ${userSelectedVotes.length > 0 ? 'hover:bg-indigo-700 animate-pulse' : 'opacity-50 cursor-not-allowed'}" ${userSelectedVotes.length === 0 ? 'disabled' : ''}>
+                        送出投票 (${userSelectedVotes.length}/3)
+                    </button>
+                </div>
+            `;
         }
 
-        function handleVote(id) {
-            votes[id] += 1;
+        function toggleVoteSelection(id) {
+            if (userSelectedVotes.includes(id)) {
+                userSelectedVotes = userSelectedVotes.filter(v => v !== id);
+            } else {
+                if (userSelectedVotes.length < 3) {
+                    userSelectedVotes.push(id);
+                }
+            }
+            renderVoteOptions(); 
+        }
+
+        async function submitVotes() {
+            if (userSelectedVotes.length === 0 || !currentUser || hasVoted) return;
+            
             hasVoted = true;
             document.getElementById('vote-options').classList.add('hidden');
-            renderVoteResults();
-            document.getElementById('vote-results').classList.remove('hidden');
+            document.getElementById('vote-selection-status').classList.add('hidden');
+            
+            // 寫入 Firestore 雲端資料庫
+            const docRef = doc(db, 'artifacts', appId, 'public', 'data', COLLECTION_NAME, currentUser.uid);
+            try {
+                await setDoc(docRef, { 
+                    selected: userSelectedVotes,
+                    timestamp: new Date().toISOString()
+                });
+                showSuccessScreen();
+            } catch (error) {
+                console.error("寫入資料庫失敗：", error);
+                alert("網路連線異常，請稍後再試！");
+                hasVoted = false; // 回復狀態
+                resetVoteUI();
+            }
         }
 
-        function renderVoteResults() {
-            const container = document.getElementById('vote-bars-container');
-            const total = Object.values(votes).reduce((a, b) => a + b, 0);
+        function showSuccessScreen() {
+            document.getElementById('vote-success').classList.remove('hidden');
+            document.getElementById('vote-already').classList.add('hidden');
+        }
+
+        function showAlreadyVotedScreen() {
+            document.getElementById('vote-options').classList.add('hidden');
+            document.getElementById('vote-selection-status').classList.add('hidden');
+            document.getElementById('vote-success').classList.add('hidden');
+            document.getElementById('vote-already').classList.remove('hidden');
+        }
+
+        function resetVoteUI() {
+            document.getElementById('vote-options').classList.remove('hidden');
+            document.getElementById('vote-success').classList.add('hidden');
+            document.getElementById('vote-already').classList.add('hidden');
+            renderVoteOptions();
+        }
+
+        function renderResults() {
+            document.getElementById('results-voter-count').textContent = `總投票人數: ${totalVoters}`;
+            const container = document.getElementById('results-bars-container');
             
-            container.innerHTML = CORE_VALUES.map(val => {
-                const percentage = total === 0 ? 0 : Math.round((votes[val.id] / total) * 100);
+            // 依照票數排序
+            const sortedValues = [...CORE_VALUES].sort((a, b) => votes[b.id] - votes[a.id]);
+
+            container.innerHTML = sortedValues.map(val => {
+                // 計算比例：獲得該票數的人數 / 總投票人數
+                const percentage = totalVoters === 0 ? 0 : Math.round((votes[val.id] / totalVoters) * 100);
                 return `
-                    <div class="space-y-2 mb-4">
-                        <div class="flex justify-between font-medium text-slate-700">
-                            <span>${val.title}</span>
-                            <span>${votes[val.id]} 票 (${percentage}%)</span>
+                    <div class="space-y-2">
+                        <div class="flex justify-between font-bold text-slate-700 text-base md:text-lg">
+                            <span class="flex items-center gap-2">${val.iconSvg.replace('w-7 h-7', 'w-5 h-5')} ${val.title}</span>
+                            <span>${votes[val.id]} 票 <span class="text-indigo-500 text-sm">(${percentage}%)</span></span>
                         </div>
-                        <div class="w-full bg-slate-100 h-4 rounded-full overflow-hidden">
-                            <div class="bg-indigo-500 h-full transition-all duration-1000" style="width: ${percentage}%"></div>
+                        <div class="w-full bg-slate-200 h-4 md:h-5 rounded-full overflow-hidden shadow-inner">
+                            <div class="bg-indigo-500 h-full transition-all duration-1000 relative" style="width: ${percentage}%"></div>
                         </div>
                     </div>
                 `;
             }).join('');
         }
 
-        // Render Quiz View
-        function renderQuiz() {
-            const scenario = SCENARIOS[quizIndex];
-            document.getElementById('quiz-progress').textContent = `情境挑戰 ${quizIndex + 1} / ${SCENARIOS.length}`;
-            document.getElementById('quiz-score-display').textContent = `目前分數: ${score}`;
-            document.getElementById('quiz-question').textContent = scenario.question;
-            
-            const optionsContainer = document.getElementById('quiz-options');
-            optionsContainer.innerHTML = scenario.options.map((option, idx) => `
-                <button onclick="handleQuizAnswer(${idx})" id="option-btn-${idx}" class="w-full text-left p-5 rounded-xl border-2 border-slate-100 hover:border-indigo-400 hover:bg-indigo-50 transition-all flex items-center justify-between group">
-                    <span class="text-lg font-medium text-slate-700">${option.text}</span>
-                    <span id="option-icon-${idx}"></span>
-                </button>
-            `).join('');
-
-            const feedbackDiv = document.getElementById('quiz-feedback');
-            feedbackDiv.classList.add('hidden');
-            feedbackDiv.className = 'mt-6 p-4 rounded-lg animate-bounce hidden';
-            
-            isQuizAnswering = false;
-        }
-
-        function handleQuizAnswer(optionIdx) {
-            if (isQuizAnswering) return;
-            isQuizAnswering = true;
-
-            const scenario = SCENARIOS[quizIndex];
-            const option = scenario.options[optionIdx];
-            const feedbackDiv = document.getElementById('quiz-feedback');
-            const optionBtn = document.getElementById(`option-btn-${optionIdx}`);
-            const optionIcon = document.getElementById(`option-icon-${optionIdx}`);
-
-            // Styling buttons based on selection
-            const allBtns = document.querySelectorAll('[id^="option-btn-"]');
-            allBtns.forEach(btn => {
-                btn.classList.remove('hover:border-indigo-400', 'hover:bg-indigo-50');
-                btn.classList.add('opacity-50', 'cursor-not-allowed');
-            });
-
-            if (option.isCorrect) {
-                score += 1;
-                document.getElementById('quiz-score-display').textContent = `目前分數: ${score}`;
-                optionBtn.classList.remove('border-slate-100', 'opacity-50');
-                optionBtn.classList.add('border-green-500', 'bg-green-50');
-                optionIcon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>`;
-                
-                feedbackDiv.classList.add('bg-green-100', 'text-green-800');
-                feedbackDiv.innerHTML = `<strong>💡 答對了！</strong> ${option.feedback}`;
-            } else {
-                optionBtn.classList.remove('border-slate-100', 'opacity-50');
-                optionBtn.classList.add('border-red-500', 'bg-red-50');
-                
-                feedbackDiv.classList.add('bg-orange-100', 'text-orange-800');
-                feedbackDiv.innerHTML = `<strong>💡 小提醒：</strong> ${option.feedback}`;
-            }
-
-            feedbackDiv.classList.remove('hidden');
-
-            // Move to next question or results
-            setTimeout(() => {
-                if (quizIndex < SCENARIOS.length - 1) {
-                    quizIndex += 1;
-                    renderQuiz();
-                } else {
-                    switchView('results');
+        async function clearAllVotes() {
+            if (!currentUser) return;
+            if (confirm("確定要清除所有的投票紀錄嗎？這將無法復原！")) {
+                const colRef = collection(db, 'artifacts', appId, 'public', 'data', COLLECTION_NAME);
+                try {
+                    const snapshot = await getDocs(colRef);
+                    // 刪除所有使用者的投票紀錄
+                    const deletePromises = snapshot.docs.map(d => deleteDoc(d.ref));
+                    await Promise.all(deletePromises);
+                    alert("已成功清除所有紀錄");
+                } catch (error) {
+                    console.error("清除資料庫失敗：", error);
+                    alert("清除失敗，請檢查權限或連線狀態。");
                 }
-            }, 2000);
+            }
         }
 
-        // Reset App
-        function resetAll() {
-            quizIndex = 0;
-            score = 0;
-            hasVoted = false;
-            
-            // Reset vote UI
-            document.getElementById('vote-options').classList.remove('hidden');
-            document.getElementById('vote-results').classList.add('hidden');
-            
-            switchView('home');
+        // Render Practice Guide View (Replaced Quiz)
+        function renderPracticeGuide() {
+            const container = document.getElementById('practice-container');
+            container.innerHTML = CORE_VALUES.map(val => `
+                <div class="border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow bg-white flex flex-col">
+                    <div class="${val.headerBg} p-4 flex items-center gap-3 border-b border-slate-200">
+                        <div class="bg-white p-2 rounded-full shadow-sm">
+                            ${val.iconSvg}
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800">${val.title}</h3>
+                    </div>
+                    <div class="p-5 flex-1 space-y-4">
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                            <h4 class="text-sm font-bold text-slate-500 mb-2 flex items-center gap-1">
+                                💬 怎麼說？ (How to say)
+                            </h4>
+                            <p class="text-slate-700 font-medium leading-relaxed">
+                                ${val.howToSay}
+                            </p>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                            <h4 class="text-sm font-bold text-slate-500 mb-2 flex items-center gap-1">
+                                🏃‍♂️ 怎麼做？ (How to do)
+                            </h4>
+                            <p class="text-slate-700 font-medium leading-relaxed">
+                                ${val.howToDo}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
         }
+
     </script>
 </body>
 </html>
